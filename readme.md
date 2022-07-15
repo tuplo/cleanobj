@@ -2,7 +2,14 @@
 <div align="center">
   <img src="logo.png" alt="Logo" width="120" height="120">
   <h1 align="center">cleanobj</h3>
-  <p align="center">Tiny (505B) removal of object properties that are undefined, functions, empty arrays or strings.</p>
+  <p align="center">Tiny (505B) removal of object properties that are undefined, functions, empty arrays or empty strings.</p>
+  <p align="center">
+    <img src="https://img.shields.io/npm/v/@tuplo/cleanobj">
+    <img src="https://img.shields.io/bundlephobia/minzip/@tuplo/cleanobj">
+  	 <a href="https://codeclimate.com/github/tuplo/cleanobj/test_coverage">
+  	   <img src="https://api.codeclimate.com/v1/badges/3a4ceb5e45d0039ba1ed/test_coverage" /></a>
+  	 <img src="https://github.com/tuplo/cleanobj/actions/workflows/build.yml/badge.svg">
+  </p>
 </div>
 
 ## Install
@@ -58,15 +65,14 @@ const after = clean(obj);
 A function that if it returns true for a given property, `cleanobj` will not clean that property.
 
 ```typescript
-
 const obj = {
   p1: undefined,
   p2: [],
-  p3: undefined
-}
+  p3: undefined,
+};
 
 function ignore(key: string, value: unknown) {
-  return key === 'p1' || (value as unknown[]).length === 0
+  return key === 'p1' || (value as unknown[]).length === 0;
 }
 
 const result = clean(obj, { ignore });
@@ -74,7 +80,6 @@ const result = clean(obj, { ignore });
 //   p1: undefined,
 //   p2: []
 // }
-
 ```
 
 ## License
