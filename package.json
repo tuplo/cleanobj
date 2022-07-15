@@ -5,7 +5,8 @@
 	"author": "Rui Costa",
 	"keywords": [
 		"utility",
-		"object"
+		"object",
+		"clean"
 	],
 	"license": "MIT",
 	"types": "dist/index.d.ts",
@@ -79,13 +80,11 @@
 			"jest": true
 		},
 		"rules": {
-			"import/prefer-default-export": "off",
 			"import/extensions": "off",
-			"import/no-extraneous-dependencies": "off",
 			"jest/prefer-expect-assertions": "off",
 			"jest/no-hooks": "off",
-			"lines-between-class-members": "off",
 			"class-methods-use-this": "off",
+			"no-continue": "off",
 			"no-restricted-syntax": [
 				"error",
 				{
