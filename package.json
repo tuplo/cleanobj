@@ -28,12 +28,12 @@
 		"dist/index.d.ts"
 	],
 	"scripts": {
-		"build": "bash sh/build.sh",
-		"coverage": "bash sh/coverage.sh",
+		"build": "tsx sh/build.ts",
+		"coverage": "tsx sh/coverage.ts",
 		"lint:ts": "tsc --noEmit",
 		"lint": "eslint src --ext ts,tsx",
-		"test:ci": "bash sh/test-ci.sh",
-		"test": "bash sh/test.sh"
+		"test:ci": "jest --ci",
+		"test": "jest --watch"
 	},
 	"devDependencies": {
 		"@types/jest": "28.1.6",
@@ -50,7 +50,9 @@
 		"nyc": "15.1.0",
 		"prettier": "2.7.1",
 		"ts-jest": "28.0.7",
-		"typescript": "4.7.4"
+		"tsx": "3.11.0",
+		"typescript": "4.7.4",
+		"zx": "7.1.1"
 	},
 	"prettier": {
 		"singleQuote": true,
@@ -83,7 +85,9 @@
 			"import/extensions": "off",
 			"jest/prefer-expect-assertions": "off",
 			"jest/no-hooks": "off",
+			"jest/require-hook": "off",
 			"class-methods-use-this": "off",
+			"import/no-unresolved": "off",
 			"no-continue": "off",
 			"no-restricted-syntax": [
 				"error",
@@ -108,9 +112,5 @@
 		"moduleNameMapper": {
 			"^src/(.*)": "<rootDir>/src/$1"
 		}
-	},
-	"volta": {
-		"node": "18.7.0",
-		"yarn": "1.22.19"
 	}
 }

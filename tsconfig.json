@@ -12,6 +12,6 @@
     "target": "es6",
     "incremental": true,
   },
-  "include": [ "src/**/*.ts" ],
+  "include": [ "src/**/*.ts", "sh/*.ts" ],
   "exclude": ["node_modules"]
 }
