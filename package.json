@@ -30,7 +30,7 @@
 	"scripts": {
 		"build": "tsx sh/build.ts",
 		"coverage": "tsx sh/coverage.ts",
-		"lint:ts": "tsc --noEmit",
+		"lint:ts": "tsc --noEmit src/*.ts",
 		"lint": "eslint src --ext ts,tsx",
 		"test:ci": "jest --ci",
 		"test": "jest --watch"

@@ -1,11 +1,11 @@
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type Obj = Record<string, any>;
 
-type Options = {
+interface IOptions {
 	ignore?: (key: string, value: unknown) => boolean;
-};
+}
 
-export default function cleanobj<T extends Obj>(obj: T, options?: Options): T {
+export default function cleanobj<T extends Obj>(obj: T, options?: IOptions): T {
 	const { ignore = () => false } = options || {};
 
 	const ret = {} as Obj;
