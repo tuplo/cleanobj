@@ -17,18 +17,18 @@ export default function cleanobj<T extends Obj>(obj: T, options?: IOptions): T {
 			continue;
 		}
 
-		if (typeof value === 'undefined') continue;
+		if (typeof value === "undefined") continue;
 
-		if (typeof value === 'function') continue;
+		if (typeof value === "function") continue;
 
-		if (typeof value === 'object' && !Array.isArray(value) && value !== null) {
+		if (typeof value === "object" && !Array.isArray(value) && value !== null) {
 			const n = cleanobj(value as Obj);
 			if (Object.keys(n).length > 0) ret[key] = n;
 			continue;
 		}
 
-		if (typeof value === 'string') {
-			const s = value.replace(/\s+/g, ' ').trim();
+		if (typeof value === "string") {
+			const s = value.replace(/\s+/g, " ").trim();
 			if (s.length > 0) ret[key] = s;
 			continue;
 		}
